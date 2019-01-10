@@ -1,0 +1,22 @@
+<div class="center2">
+  <center>
+    <h1>Course:  <%= @course.name %></h1>
+    <h1>Credit:  <%= @course.credit_hours %></h1>
+
+  </center>
+  <%= form_tag "/courses/" + @course.id.to_s, method: 'put', class: "ui form" do %>
+    <div class="field">
+      <label>Course Name</label>
+      <input type="text" name="name" value="<%= @course.name %>" placeholder="First Name">
+    </div>
+    <div class="field">
+      <label>Ammount of Credit Hours </label>
+      <input type="text" name="Credit_hours" value = "<%= @course.credit_hours %>"placeholder="Credit">
+    </div>
+    <div class="field">
+      <label>Cohort </label>
+      <input type="text" name="cohort" placeholder="cohort">
+    </div>
+    <button class="ui button" type="submit">Submit</button>
+  <% end %>
+</div>

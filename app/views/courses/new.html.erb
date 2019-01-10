@@ -1,0 +1,18 @@
+<div class="center2">
+  <form class="ui form" action = "/courses" method = "POST">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+    <div class="field">
+      <label>Course Name</label>
+      <input type="text" name="name" placeholder="First Name">
+    </div>
+    <div class="field">
+      <label>Ammount of Credit Hours </label>
+      <input type="text" name="Credit_hours" placeholder="Credit">
+    </div>
+    <div class="field">
+      <label>Cohort </label>
+      <input type="text" name="cohort" placeholder="cohort">
+    </div>
+    <button class="ui button" type="submit">Submit</button>
+  </form>
+</div>

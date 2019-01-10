@@ -1,0 +1,20 @@
+<div class="center">
+  <div id="clearance" class="password-reset">
+    <h2><%= t(".title") %></h2>
+
+    <p><%= t(".description") %></p>
+
+    <%= form_for :password, url: passwords_path,html: {class: 'ui form'} do |form| %>
+    <div class="text-field">
+      <%= form.label :email %>
+      <br>
+      <%= form.text_field :email, type: 'email' %>
+    </div>
+    <br>
+
+    <div class="submit-field">
+      <button class="ui button" type="submit">Reset Password</button>
+    </div>
+    <% end %>
+  </div>
+</div>

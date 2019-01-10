@@ -1,0 +1,29 @@
+<div class="center3">
+  <center><h1><%= @course.name %> - Credits: <%= @course.credit_hours %> </h1>
+
+  <a class = "ui button"  href = "/courses/<%= @course.id %>/edit">
+     <i class = "edit icon"> </i>Edit</a>
+ </center>
+    <table class="ui striped table">
+      <thead>
+        <tr>
+          <th>Cohorts</th>
+          <th>Teachers</th>
+          <th>Students</th>
+        </tr>
+      </thead>
+        <tbody>
+            <tr>
+              <% @course.cohorts.each do |cohort| %>
+                <td><%= cohort.name %>  from  <%= cohort.year %>   <a href="/cohorts/<%= cohort.id %>" class = "icon"><i class="eye icon"></i>view</a></td>
+                  <% cohort.teachers.each do |teacher| %>
+                    <td><%= teacher.first_name %>   <%= teacher.last_name %>   <a href="/teacher/<%= teacher.id %>" class = "icon"><i class="eye icon"></i>view</a></td>
+                  <% end %>
+                  <% cohort.students.each do |student| %>
+                    <td><%= student.first_name %>   <%= student.last_name %>   <a href="/student/<%= student.id %>" class = "icon"><i class="eye icon"></i>view</a></td>
+                  <% end %>
+              <% end %>
+            </tr>
+        </tbody>
+    </table>
+</div>

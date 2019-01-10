@@ -1,0 +1,25 @@
+<div class="center3">
+  <center><h1><%= @cohort.name %> from year <%= @cohort.year %> </h1></center>
+    <table class="ui striped table">
+      <thead>
+        <tr>
+          <th>Courses</th>
+          <th>Teachers</th>
+          <th>Students</th>
+        </tr>
+      </thead>
+      <% @cohort.courses.each do |course| %>
+        <tbody>
+            <tr>
+              <td><%= course.name %>  <a href="/courses/<%= course.id %>" class = "icon"><i class="eye icon"></i>view</a</td>
+                <% @cohort.teachers.each do |teacher| %>
+                  <td><%= teacher.first_name %>   <%= teacher.last_name %>   <a href="/teacher/<%= teacher.id %>" class = "icon"><i class="eye icon"></i>view</a></td>
+                <% end %>
+                <% @cohort.students.each do |student| %>
+                  <td><%= student.first_name %>   <%= student.last_name %><a href="/student/<%= student.id %>" class = "icon"><i class="eye icon"></i>view</a></td>
+                <% end %>
+            </tr>
+        </tbody>
+      <% end %>
+    </table>
+</div>

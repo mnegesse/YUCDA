@@ -1,0 +1,15 @@
+<div class="center3">
+  <% @cohorts.each do |c| %>
+    <div class="ui card">
+      <a class="image" href="#">
+        <%= image_tag "yucda.png" %>
+      </a>
+      <div class="content">
+        <a class="header" href="/cohorts/<%= c.id %>"> <%= c.name %> from <%= c.year%> </a>
+        <div class="meta">
+          <a><%= c.students.count %> students atended</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

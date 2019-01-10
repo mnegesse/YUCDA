@@ -1,0 +1,39 @@
+<div class="center">
+    <div class="ui card">
+      <div class="content">
+        <div class="header"><%= @teacher.first_name+" "+@teacher.last_name %></div>
+      </div>
+      <div class="content">
+        <% @teacher.cohorts.each do |cohort|%>
+          <h4 class="ui sub header">Cohort:  <%= cohort.name %></h4>
+          <h4 class="ui sub header">Year: <%= cohort.year %></h4>
+        <% end %>
+        <div class="ui small feed">
+          <div class="event">
+            <div class="content">
+              <div class="summary">
+                <p>Age: <%= @teacher.age %></p>
+              </div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="content">
+              <div class="summary">
+                <p>Salary: <%= @teacher.salary %></p>
+              </div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="content">
+              <div class="summary">
+                <p>Education: <%= @teacher.education %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="extra content">
+        <a class="ui button" href = "/teacher/<%= @teacher.id %>">Edit Teacher</a>
+      </div>
+    </div>
+</div>

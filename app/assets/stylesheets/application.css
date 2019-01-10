@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+.center{
+  align-items: center;
+  margin-left: 30%;
+  margin-right: 35%;
+  margin-top:10%;
+}
+.center2{
+  align-items: center;
+  margin-left: 30%;
+  margin-right: 35%;
+  margin-top:10%;
+}
+.center3{
+  align-items: center;
+  margin-left: 25%;
+  margin-right: 10%;
+  margin-top:5%;
+}
+.icon{
+
+}

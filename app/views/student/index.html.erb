@@ -1,0 +1,18 @@
+<div class="center">
+  <% @students.each do |student|%>
+    <div class="ui card">
+      <div class="content">
+        <div class="header"><%= student.first_name+" "+student.last_name %></div>
+      </div>
+      <div class="content">
+        <% student.cohorts.each do |cohort|%>
+          <h4 class="ui sub header">Cohort:  <%= cohort.name %></h4>
+          <h4 class="ui sub header">Year: <%= cohort.year %></h4>
+        <% end %>
+      </div>
+      <div class="extra content">
+        <a class="ui button" href = "/student/<%= student.id %>">View Student</a>
+      </div>
+    </div>
+  <% end %>
+</div>

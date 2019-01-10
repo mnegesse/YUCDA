@@ -1,0 +1,23 @@
+<div class="center3">
+  <div class="ui card">
+    <a class="image" href="/courses/new">
+      <%= image_tag "Add.jpeg" %>
+    </a>
+    <div class="content">
+      <a class="header" href="/courses/new">ADD A COURSE</a>
+    </div>
+  </div>
+  <% @courses.each do |c| %>
+  <div class="ui card">
+    <a class="image" href="courses/<%= c.id %>">
+      <%= image_tag "yucda.png" %>
+    </a>
+    <div class="content">
+      <a class="header" href="courses/<%= c.id %>"> <%= c.name %>  </a>
+      <div class="meta">
+        <a> Credits: <%= c.credit_hours %> </a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

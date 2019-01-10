@@ -4,12 +4,38 @@
     <title>YUCDA</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div id="header">
+      <% if signed_in? -%>
+        <%= button_to t(".sign_out"), sign_out_path,class: "ui button", method: :delete %>
+      <% else -%>
+        <%= link_to t(".sign_in"), sign_in_path, class: "ui button"%>
+        <%= link_to t(".sign_up"), sign_up_path, class: "ui button"%>
+      <% end -%>
+      <a class="ui button" href = "/student">Students</a>
+      <a class="ui button" href = "/teacher">Teachers</a>
+      <a class="ui button" href = "/cohorts">Cohorts</a>
+      <a class="ui button" href = "/courses">Courses Given</a>
+    </div>
+<div class="center">
+
+</div>
+
+    <div id="flash">
+      <% flash.each do |key, value| -%>
+        <div id="flash_<%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+
     <%= yield %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
