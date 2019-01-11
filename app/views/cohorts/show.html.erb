@@ -14,18 +14,22 @@
           <th>Students</th>
         </tr>
       </thead>
+      <tbody>
       <% @cohort.courses.each do |course| %>
-        <tbody>
             <tr>
               <td><%= course.name %>  <a href="/courses/<%= course.id %>" class = "icon"><i class="eye icon"></i>view</a</td>
+                <td>
                 <% @cohort.teachers.each do |teacher| %>
-                  <td><%= teacher.first_name %>   <%= teacher.last_name %>   <a href="/teacher/<%= teacher.id %>" class = "icon"><i class="eye icon"></i>view</a></td>
+                  <%= teacher.first_name %>   <%= teacher.last_name %>   <a href="/teacher/<%= teacher.id %>" class = "icon"><i class="eye icon"></i>view</a><br><hr><br>
                 <% end %>
+                </td>
+                <td>
                 <% @cohort.students.each do |student| %>
-                  <td><%= student.first_name %>   <%= student.last_name %><a href="/student/<%= student.id %>" class = "icon"><i class="eye icon"></i>view</a></td>
+                  <%= student.first_name %>   <%= student.last_name %><a href="/student/<%= student.id %>" class = "icon"><i class="eye icon"></i>view</a><br><hr><br>
                 <% end %>
-            </tr>
+            </td>
+          </tr>
+          <% end %>
         </tbody>
-      <% end %>
     </table>
 </div>

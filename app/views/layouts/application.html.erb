@@ -10,7 +10,12 @@
   </head>
 
   <body>
+<div class="cover">
+  <center><h1 class = "title"> < YEAR UP CODE ACADAMY > </h1></center>
+</div>
+<div class="sepp">
 
+</div>
 
 
 <% if signed_in? -%>
@@ -29,7 +34,7 @@
     <%= link_to t(".sign_in"), sign_in_path, class: " item"%>
   <%= link_to t(".sign_up"), sign_up_path, class: "ui item"%>
   <% end -%>
-      <a class=" item" href = "/cohorts">
+      <a class="item" href = "/cohorts">
       Cohorts
       </a>
       <a class="item" href = "/student">

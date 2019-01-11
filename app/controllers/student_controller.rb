@@ -6,7 +6,8 @@ class StudentController < ApplicationController
 
   def update
   @student = Student.find(params[:id])
-  @newstudent = @student.update(first_name: params[:first_name], last_name: params[last_name], education: [:educatoin])
+  @newstudent = @student.update(first_name: params[:first_name], last_name: params[:last_name], education: params[:education])
+
   redirect_to '/student'
   end
 
@@ -27,7 +28,7 @@ class StudentController < ApplicationController
   def create
     @cohorts = Cohort.where(year: params[:cohort])
     if @cohorts.count >= 1
-      @student = Student.create(first_name: params[:first_name], last_name: params[:last_name], password: params[:password], age: params[:age], education: [:educatoin])
+      @student = Student.create(first_name: params[:first_name], last_name: params[:last_name], password: params[:password], age: params[:age], education: [:education])
       @cohorts.each do |cohort|
         cohort.students<<(@student)
       end

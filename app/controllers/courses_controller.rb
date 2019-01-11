@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
     before_action :require_login, except: [:index, :show]
   def index
-    @courses = Course.all
+    @courses = Course.all.reverse
   end
 
   def update
@@ -18,7 +18,7 @@ class CoursesController < ApplicationController
   def destroy
   @course = Course.find(params[:id])
   @course.destroy
-  redirect_to '/courses'  
+  redirect_to '/courses'
   end
 
   def show

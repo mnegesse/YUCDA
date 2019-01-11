@@ -31,6 +31,24 @@
   margin-right: 10%;
   margin-top:5%;
 }
-.icon{
+.cover{
+  background-image: url("cover.jpg");
+  background-position: cover;
+  background-size: cover;
+  align-items: text;
+  height: 500px;
+}
 
+.title{
+  font-style: underline yellow;
+}
+.cover h1{
+  padding-top: 200px;
+  font-size: 100px;
+  color: white;
+  font-style: underline yellow;
+}
+.sepp{
+  height: 50px;
+  background-color: grey;
 }

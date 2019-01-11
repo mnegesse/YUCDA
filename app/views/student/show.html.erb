@@ -6,13 +6,13 @@
       <div class="content">
         <% @student.cohorts.each do |cohort|%>
           <h4 class="ui sub header">Cohort:  <%= cohort.name %></h4>
-          <h4 class="ui sub header">Year: <%= cohort.year %></h4>
+          <h4 class="ui sub header">Year: <%= cohort.year %></h4><br><hr><br>
         <% end %>
         <div class="ui small feed">
           <div class="event">
             <div class="content">
               <div class="summary">
-                <p>Age: <%= @student.age %></p>
+                <p>Age: <%= @student.age %> </p>
               </div>
             </div>
           </div>
@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="extra content">
-        <a class="ui button" href = "/student/<%= @student.id %>/edit %>">Edit Student</a>
+        <a class="ui button" href = "/student/<%= @student.id %>/edit">Edit Student</a>
       </div>
     </div>
 </div>

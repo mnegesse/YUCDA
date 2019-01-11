@@ -13,8 +13,10 @@ Rails.application.routes.draw do
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
   get "/sign_up" => "clearance/users#new", as: "sign_up"
   resources :courses
+  delete '/courses/:id/delete' => 'courses#destroy'
   resources :teacher
   resources :student
+  get '/student/:id/edit' => 'student#edit'
   resources :admin
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

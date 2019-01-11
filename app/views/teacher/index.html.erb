@@ -1,4 +1,14 @@
 <div class="center">
+  <center><h1>All Teachers</h1></center>
+  <br>
+  <div class="ui card">
+      <a class="image" href="/teacher/new">
+        <%= image_tag "Add.jpeg" %>
+      </a>
+      <div class="content">
+        <a class="header" href="/teacher/new">ADD Teacher</a>
+      </div>
+    </div>
   <% @teachers.each do |teacher|%>
     <div class="ui card">
       <div class="content">

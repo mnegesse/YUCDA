@@ -1,2 +1,36 @@
-<h1>Teacher#new</h1>
-<p>Find me in app/views/teacher/new.html.erb</p>
+<div class="center2">
+<center><h1>Create Teacher</h1></center>
+  <form class="ui form" action = "/teacher " method = "POST">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+    <div class="field">
+      <label>First Name</label>
+      <input type="text" name="first_name" placeholder="First Name">
+    </div>
+    <div class="field">
+      <label>Last Name</label>
+      <input type="text" name="last_name" placeholder="Last Name">
+    </div>
+    <div class="field">
+      <label>Age </label>
+      <input type="text" name="age" placeholder="age">
+    </div>
+    <div class="field">
+      <label>Education </label>
+      <input type="text" name="education" placeholder="Education">
+    </div>
+    <div class="field">
+      <div class="field">
+        <label>Salary </label>
+        <input type="text" name="salary" placeholder="Salary">
+      </div>
+      <div class="field">
+      <label>Password</label>
+      <input type="hiddin" name="password" placeholder="password">
+    </div>
+    <div class="field">
+      <label>Cohort </label>
+      <input type="text" name="cohort" placeholder="cohort">
+    </div>
+    <button class="ui button" type="submit">Submit</button>
+  </form>
+</div>

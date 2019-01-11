@@ -1,2 +1,24 @@
-<h1>Teacher#edit</h1>
-<p>Find me in app/views/teacher/edit.html.erb</p>
+<div class="center2">
+  <center>
+    <h1>Edit teacher:  <%= @teacher.first_name %>  <%= @teacher.last_name %> </h1>
+    <h1>Age:  <%= @teacher.age %> </h1>
+
+  </center>
+  <%= form_tag "/teacher/" + @teacher.id.to_s, method: 'put', class: "ui form" do %>
+    <div class="field">
+      <label>teacher Name</label>
+      <input type="text" name="first_name" value="<%= @teacher.first_name %>" placeholder="First Name">
+      <br>
+      <input type="text" name="last_name" value="<%= @teacher.last_name %>" placeholder="Last Name">
+    </div>
+    <div class="field">
+      <label>Education </label>
+      <input type="text" name="education" value = "<%= @teacher.education %>"placeholder="Education">
+    </div>
+    <div class="field">
+      <label>Salary </label>
+      <input type="text" name="salary" value = "<%= @teacher.salary %>"placeholder="Salary">
+    </div>
+    <button class="ui button" type="submit">Submit</button>
+  <% end %>
+</div>

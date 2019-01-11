@@ -3,8 +3,9 @@
     <h1>Credits: <%= @course.credit_hours %> </h1>
   <a class = "ui button"  href = "/courses/<%= @course.id %>/edit">
      <i class = "edit icon"> </i>Edit</a>
-  <a class = "ui button" method = "DELETE" href = "/courses/<%= @course.id %>">
+  <a class = "ui button"  href = "/courses/<%= @course.id %>">
      <i class = "delete icon"> </i>Delete</a>
+     <% link_to "/courses/:id", @course, class: 'ui button', method: 'delete' %>
  </center>
     <table class="ui striped table">
       <thead>
@@ -15,17 +16,21 @@
         </tr>
       </thead>
         <tbody>
-            <tr>
               <% @course.cohorts.each do |cohort| %>
+              <tr>
                 <td><%= cohort.name %>  from  <%= cohort.year %>   <a href="/cohorts/<%= cohort.id %>" class = "icon"><i class="eye icon"></i>view</a></td>
+                <td>
                   <% cohort.teachers.each do |teacher| %>
-                    <td><%= teacher.first_name %>   <%= teacher.last_name %>   <a href="/teacher/<%= teacher.id %>" class = "icon"><i class="eye icon"></i>view</a></td>
+                    <%= teacher.first_name %>   <%= teacher.last_name %>   <a href="/teacher/<%= teacher.id %>" class = "icon"><i class="eye icon"></i>view</a><br><hr><br>
                   <% end %>
+                  </td>
+                <td>
                   <% cohort.students.each do |student| %>
-                    <td><%= student.first_name %>   <%= student.last_name %>   <a href="/student/<%= student.id %>" class = "icon"><i class="eye icon"></i>view</a></td>
+                    <%= student.first_name %>   <%= student.last_name %>   <a href="/student/<%= student.id %>" class = "icon"><i class="eye icon"></i>view</a><br><hr><br>
                   <% end %>
+                </td>
+              </tr>
               <% end %>
-            </tr>
         </tbody>
     </table>
 </div>
