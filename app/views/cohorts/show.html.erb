@@ -1,5 +1,11 @@
 <div class="center3">
-  <center><h1><%= @cohort.name %> from year <%= @cohort.year %> </h1></center>
+  <center><h1>Cohort Name: <%= @cohort.name %> from  </h1>
+  <h1>Year: <%= @cohort.year %></h1>
+  <a class = "ui button"  href = "/cohorts/<%= @cohort.id %>/edit">
+     <i class = "edit icon"> </i>Edit</a>
+  <a class = "ui button" method = "DELETE" href = "/cohort/<%= @cohort.id %>">
+     <i class = "delete icon"> </i>Delete</a>
+  </center>
     <table class="ui striped table">
       <thead>
         <tr>

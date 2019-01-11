@@ -1,8 +1,10 @@
 <div class="center3">
-  <center><h1><%= @course.name %> - Credits: <%= @course.credit_hours %> </h1>
-
+  <center><h1>Course Name:  <%= @course.name %> </h1>
+    <h1>Credits: <%= @course.credit_hours %> </h1>
   <a class = "ui button"  href = "/courses/<%= @course.id %>/edit">
      <i class = "edit icon"> </i>Edit</a>
+  <a class = "ui button" method = "DELETE" href = "/courses/<%= @course.id %>">
+     <i class = "delete icon"> </i>Delete</a>
  </center>
     <table class="ui striped table">
       <thead>

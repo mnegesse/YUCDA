@@ -5,25 +5,20 @@ class CoursesController < ApplicationController
   end
 
   def update
-    @cohorts = Cohort.where(year: params[:cohort])
     @course = Course.find(params[:id])
     @newcourse = @course.update(name: params[:name], credit_hours: params[:credit_hours])
-    # @newcourse.save
-    if @cohorts.size >= 1
-      @cohorts.each do |cohort|
-        cohort.courses<<(@course)
-      end
-      redirect_to  "/courses"
-    else
-      redirect_to "/courses/:id"
-    end
+    redirect_to  "/courses"
   end
 
   def edit
     @course = Course.find(params[:id])
+    @cohorts = Cohort.all
   end
 
   def destroy
+  @course = Course.find(params[:id])
+  @course.destroy
+  redirect_to '/courses'  
   end
 
   def show
@@ -42,7 +37,7 @@ class CoursesController < ApplicationController
       @cohorts.each do |cohort|
         cohort.courses<<(@new)
       end
-      redirect "/courses"
+      redirect_to "/courses"
     else
       redirect_to "/courses/new"
     end

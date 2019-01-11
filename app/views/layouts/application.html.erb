@@ -10,29 +10,57 @@
   </head>
 
   <body>
-    <div id="header">
-      <% if signed_in? -%>
-        <%= button_to t(".sign_out"), sign_out_path,class: "ui button", method: :delete %>
-      <% else -%>
-        <%= link_to t(".sign_in"), sign_in_path, class: "ui button"%>
-        <%= link_to t(".sign_up"), sign_up_path, class: "ui button"%>
-      <% end -%>
-      <a class="ui button" href = "/student">Students</a>
-      <a class="ui button" href = "/teacher">Teachers</a>
-      <a class="ui button" href = "/cohorts">Cohorts</a>
-      <a class="ui button" href = "/courses">Courses Given</a>
-    </div>
-<div class="center">
 
+
+
+<% if signed_in? -%>
+<div class="ui secondary pointing menu">
+  <%= button_to t(".sign_out"), sign_out_path,class: " item", method: :delete %>
+  <% else -%>
+
+  <div class="right menu">
+
+  </div>
 </div>
 
-    <div id="flash">
+<div class="ui grid">
+  <div class="four wide column">
+    <div class="ui vertical fluid tabular menu">
+    <%= link_to t(".sign_in"), sign_in_path, class: " item"%>
+  <%= link_to t(".sign_up"), sign_up_path, class: "ui item"%>
+  <% end -%>
+      <a class=" item" href = "/cohorts">
+      Cohorts
+      </a>
+      <a class="item" href = "/student">
+      Students
+      </a>
+      <a class="item" href = "/teacher">
+      Teachers
+      </a>
+      <a class="item" href = "/courses">
+      Courses Given
+      </a>
+    </div>
+  </div>
+  <div class="twelve wide stretched column">
+    <div class="ui segment">
+      <div class="center">
+<div id="flash">
       <% flash.each do |key, value| -%>
         <div id="flash_<%= key %>"><%= value %></div>
       <% end %>
     </div>
-
     <%= yield %>
+</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>

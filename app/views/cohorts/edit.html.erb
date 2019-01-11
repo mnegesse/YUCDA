@@ -1,13 +1,19 @@
+
 <div class="center2">
-  <form class="ui form">
+  <center>
+    <h1>Edit cohort:  <%= @cohort.name %></h1>
+    <h1>Year:  <%= @cohort.year %></h1>
+
+  </center>
+  <%= form_tag "/cohorts/" + @cohort.id.to_s, method: 'put', class: "ui form" do %>
     <div class="field">
-      <label>First Name</label>
-      <input type="text" name="first-name" placeholder="First Name">
+      <label>cohort Name</label>
+      <input type="text" name="name" value="<%= @cohort.name %>" placeholder="Name">
     </div>
     <div class="field">
-      <label>Last Name</label>
-      <input type="text" name="last-name" placeholder="Last Name">
+      <label>School Year </label>
+      <input type="text" name="year" value = "<%= @cohort.year %>"placeholder="Credit">
     </div>
     <button class="ui button" type="submit">Submit</button>
-  </form>
+  <% end %>
 </div>
